@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: my-sql-instance
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: fifa_local  # Puedes especificar una base de datos inicial
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./fifa_male_players.sql:/docker-entrypoint-initdb.d/fifa_male_players.sql  # Monta tu archivo SQL
+    restart: always
