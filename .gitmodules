@@ -1,3 +1,6 @@
 [submodule "fifa-api"]
 	path = fifa-api
 	url = https://github.com/santex-challenge-2024/fifa-api-challenge.git
+[submodule "fifa-angular"]
+	path = fifa-angular
+	url = https://github.com/santex-challenge-2024/fifa-angular.git
