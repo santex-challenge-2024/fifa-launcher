@@ -30,3 +30,12 @@ services:
       - JWT_SECRET=${API_JWT_SECRET}
     depends_on:
       - mysql
+
+  fifa-angular:
+    container_name: fifa-angular
+    build: ./fifa-angular
+    volumes:
+      - ./fifa-angular/src:/usr/src/app/src
+    ports:
+      - "4200:4200"
+    command: ["ng", "serve", "--host", "0.0.0.0"]
