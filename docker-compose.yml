@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   mysql:
@@ -6,9 +6,27 @@ services:
     container_name: my-sql-instance
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: fifa_local  # Puedes especificar una base de datos inicial
+      MYSQL_DATABASE: fifa_local # Puedes especificar una base de datos inicial
     ports:
       - "3306:3306"
     volumes:
-      - ./fifa_male_players.sql:/docker-entrypoint-initdb.d/fifa_male_players.sql  # Monta tu archivo SQL
+      - ./fifa_male_players.sql:/docker-entrypoint-initdb.d/fifa_male_players.sql # Monta tu archivo SQL
     restart: always
+
+  fifa-api:
+    container_name: fifa-api
+    build: ./fifa-api
+    volumes:
+      - ./fifa-api/src:/usr/src/app/src
+    ports:
+      - "${API_PORT}:${API_PORT}"
+    command: node index.js
+    environment:
+      - PORT=${API_PORT}
+      - DB_NAME=${API_DB_NAME}
+      - DB_USER=${API_DB_USER}
+      - DB_PASS=${API_DB_PASS}
+      - DB_HOST=${API_DB_HOST}
+      - JWT_SECRET=${API_JWT_SECRET}
+    depends_on:
+      - mysql
