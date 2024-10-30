@@ -2,6 +2,8 @@
 
 Este repositorio es creado para ejecutar una linea de comando y levantar todo el proyecto angular mediante docker. previamente se debe tener instalado docker en sus dispositivos.
 
+Se agrego una carpeta "Documentacion Backend" donde se encuentra la documentacion y la coleccion de postman
+
 ## Dev
 
 1. Clonar el repositorio
