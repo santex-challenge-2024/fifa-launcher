@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "9741cfb0-71e5-44c4-ae79-314e205f6d96",
+		"name": "FIFA-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26958123"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"ejais58@gmail.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Elias\",\r\n    \"last_name\": \"Jais\",\r\n    \"email\": \"ejais@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/registerUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"registerUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Player",
+			"item": [
+				{
+					"name": "Create Player",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImZpcnN0bmFtZSI6IkVsaWFzIiwiaWF0IjoxNzMwMDM5NTcyLCJleHAiOjE3MzAwNTAzNzJ9.gNYw4ciMnPUcIOFWV95zrODSeh7I4ordbZUB68PPfLY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fifa_version\": 1,\n    \"fifa_update\": 1,\n    \"player_face_url\": \"http://myface.com/eliasjais\",\n    \"long_name\": \"Fernando Alba\",\n    \"player_positions\": \"LW\",\n    \"club_name\": \"Boca Juniors\",\n    \"nationality_name\": \"Argentina\",\n    \"overall\": 85,\n    \"potential\": 91,\n    \"age\": 30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/players/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"players",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Players",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImZpcnN0bmFtZSI6IkVsaWFzIiwiaWF0IjoxNzMwMjk0ODQwLCJleHAiOjE3MzAzMDU2NDB9.Em5rvhi1tLWFNjN7dSlKRpQaimLa0o_D0VQM4vt2wFI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/players?page=1&limit=10&name=elias jose jais",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"players"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": "elias jose jais"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Player",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImZpcnN0bmFtZSI6IkVsaWFzIiwiaWF0IjoxNzMwMDM5NTcyLCJleHAiOjE3MzAwNTAzNzJ9.gNYw4ciMnPUcIOFWV95zrODSeh7I4ordbZUB68PPfLY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eve_name\": \"Argentina campeon del mundoo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/players/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"players",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Player",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImZpcnN0bmFtZSI6IkVsaWFzIiwiaWF0IjoxNzMwMDM5NTcyLCJleHAiOjE3MzAwNTAzNzJ9.gNYw4ciMnPUcIOFWV95zrODSeh7I4ordbZUB68PPfLY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"long_name\": \"Cristiano Ronaldo CR7\",\n    \"player_positions\": \"DC\",\n    \"club_name\": \"Real Madrid FC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/players/update/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"players",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
