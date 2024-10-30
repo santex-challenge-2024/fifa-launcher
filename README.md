@@ -1,9 +1,14 @@
+# Fifa Launcher
+
+Este repositorio es creado para ejecutar una linea de comando y levantar todo el proyecto angular mediante docker. previamente se debe tener instalado docker en sus dispositivos.
+
 ## Dev
 
 1. Clonar el repositorio
 2. Crear un `.env` basado en el `env.template`
-3. Ejecutar el comando `git submodule update --init --recursive` para reconstruir los submodulos
-4. Ejecutar el comando `docker compose up --build`
+3. Crear `environment.ts` en el directorio `fifa-angular/src/app/environment` y agregar todo lo que esta dentro del template
+4. Ejecutar el comando `git submodule update --init --recursive` para reconstruir los submodulos
+5. Ejecutar el comando `docker compose up --build`
 
 ### Pasos para crear los Git Submodules
 
