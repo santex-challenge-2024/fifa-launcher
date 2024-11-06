@@ -6,6 +6,10 @@ Se agrego una carpeta "Documentacion Backend" donde se encuentra la documentacio
 
 En cada repositorio esta su guia para ejecutar y como fue que se trabajo.
 
+## ATENCION:
+
+Problemas con el dubmodulo de angular en el repositorio fifa-launcher. Ver repositorio de angular en `https://github.com/santex-challenge-2024/fifa-angular`
+
 ## Dev
 
 1. Clonar el repositorio
