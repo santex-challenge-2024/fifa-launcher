@@ -10,7 +10,7 @@ Se agrega la carpeta `DEMO capturas` con imagenes de la aplicacion funcionando.
 
 ## ATENCION:
 
-Problemas con el dubmodulo de angular en el repositorio fifa-launcher. Ver repositorio de angular en `https://github.com/santex-challenge-2024/fifa-angular`
+Problemas con el submodulo de angular en el repositorio fifa-launcher. Ver repositorio de angular en `https://github.com/santex-challenge-2024/fifa-angular`
 
 ## Dev
 
